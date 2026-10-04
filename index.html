@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Fichas de campo · Puduhue</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500;600;800&display=swap">
+<style>
+:root{--azul:#2B4973;--verde:#335A34;--celeste:#9CC1D9;--gris-d:#6D7C86;--gris-l:#A3ABB6;--cafe:#D9D2C5;--bg:#F3F4F0;--surface:#fff;--ink:#1B2733;--ink-2:#4A5966;--line:#D8D3C8;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#121821;--surface:#18212C;--ink:#E8EDF2;--ink-2:#B7C2CC;--line:#2E3B49;--azul:#9CC1D9;color-scheme:dark}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Fira Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:300;font-size:16px;line-height:1.5}
+.hero{background:#1E3450;color:#F4F7F9;padding:40px 16px 32px}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px}
+.e{font-weight:800;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#9CC1D9}
+h1{font-weight:200;font-size:44px;margin:6px 0 4px;letter-spacing:-.01em}
+.hero p{margin:0;color:rgba(244,247,249,.7);max-width:520px}
+.lang{float:right;font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.lang button{background:none;border:1px solid rgba(244,247,249,.4);color:#F4F7F9;padding:4px 8px;cursor:pointer;font:inherit}
+.lang button.on{background:#F4F7F9;color:#1E3450}
+main{padding:28px 0 60px}
+.list{display:grid;gap:12px;list-style:none;padding:0;margin:0}
+.card{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);padding:16px 18px;text-decoration:none;color:inherit}
+.card:hover{border-color:var(--azul)}
+.card .n{font-size:22px;font-weight:300;flex:1}
+.card .s{font-size:13px;color:var(--ink-2)}
+.card .go{font-weight:800;font-size:12px;letter-spacing:.12em;color:var(--azul)}
+.note{margin-top:28px;font-size:13px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:16px}
+:root:not([data-lang="en"]) .en{display:none} :root[data-lang="en"] .es{display:none}
+</style>
+</head>
+<body>
+<header class="hero"><div class="wrap">
+<div class="lang"><button class="on" data-l="es">ES</button> <button data-l="en">EN</button></div>
+<div class="e">Puduhue SpA · Sembrador Agricultural Investments</div>
+<h1><span class="es">Fichas de campo</span><span class="en">Farm profiles</span></h1>
+<p><span class="es">Tarjetas de presentación de cada predio lechero para el directorio: superficie, rebaño, producción, leche vendida e infraestructura, con mapa y relieve interactivos.</span><span class="en">Board-level profiles of each dairy farm: land, herd, production, milk sold and infrastructure, with interactive map and terrain.</span></p>
+</div></header>
+<main><div class="wrap">
+<ul class="list">
+  <li><a class="card" href="radales/"><div><div class="n">Radales</div><div class="s"><span class="es">Ficha v1.2 · corte sep-26 · plataforma lechera</span><span class="en">Profile v1.2 · cut-off Sep-26 · milking platform</span></div></div><div class="go"><span class="es">ABRIR →</span><span class="en">OPEN →</span></div></a></li>
+</ul>
+<p class="note"><span class="es">Los demás campos se incorporan a medida que se publica su ficha. Información para el directorio y la administración de Puduhue SpA; cifras derivadas rotuladas como cálculo propio en cada ficha.</span><span class="en">Other farms are added as their profiles are published. Information for the board and management of Puduhue SpA; derived figures are labelled as our own calculation in each profile.</span></p>
+</div></main>
+<script>
+const r=document.documentElement;const set=l=>{r.setAttribute('data-lang',l);document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));try{localStorage.setItem('lang',l)}catch(e){}};
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>set(b.dataset.l));
+try{const s=localStorage.getItem('lang');if(s)set(s);else if(!/^es/i.test(navigator.language))set('en')}catch(e){}
+</script>
+</body>
+</html>
