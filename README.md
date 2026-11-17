@@ -13,6 +13,7 @@ robots.txt          bloquea indexación (las fichas son para el directorio, no p
 <slug>/index.html   ficha autónoma del campo (un solo archivo, sin dependencias salvo Fira Sans)
 <slug>/Tarjeta_QR_<Nombre>.png   tarjeta imprimible 2480×1240 con el QR a <base>/<slug>/
 <slug>/qr.json      matriz del QR (n módulos, path SVG, url)
+mapa/index.html     mapa satelital de todos los campos y sus potreros (lo genera sgi-puduhue: visor/armar_visor.py)
 ```
 
 La URL de cada ficha es `<base>/<slug>/`. El QR impreso apunta ahí; **no cambiar el nombre del repositorio ni
@@ -33,3 +34,9 @@ Los fuentes viven en OneDrive › Portal Puduhue › Versiones portal › script
 
 Reconstruir con los datos al último mes completo y volver a subir `site/<slug>/index.html`. La URL no cambia,
 por lo que los QR impresos siguen vigentes.
+
+## Mapa satelital
+
+`mapa/index.html` (en <base>/mapa/) muestra los campos y potreros sobre imagen satelital de Esri, con los datos de
+Agrinet por potrero. Lo genera el repositorio `puduhue/sgi-puduhue` con `python3 visor/armar_visor.py` y se copia
+aquí tal cual. Lleva solo geografía y agronomía: nada de contratos, leche ni finanzas.
